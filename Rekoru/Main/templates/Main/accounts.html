@@ -1,0 +1,44 @@
+{% extends './base.html' %}
+{% load static %}
+
+{% block title %}Rekoru - Аккаунты{% endblock %}
+
+{% block content %}
+
+
+{% if user.is_authenticated %}
+<div class="container">  
+    <div class="profile">
+        <div class="profile_information">
+            <h1>Профиль:</h1>
+            <div class="profile_line"></div>
+            <div class="profile_main">
+                <div class="profile_left-block">                   
+                        <img src="{{user.avatar.url}}" alt="avatar" class="profile_left-block_avatar"> 
+                    <div class="profile_username">{{ user.username }}</div>
+                    <div class="profile_logout-or-login">
+                        {% if user.is_authenticated %}
+                            <a href="{% url 'LogoutUrl' %}">Выйти</a>
+                        {% else %}
+
+                        {% endif %}                             
+                    </div> 
+                </div>
+                <div class="profile_right-block">
+                    <h2>Проекты:</h2>
+                    <div class="profile_create-project-btn">
+                        <a href="{% url 'AddprojectUrl' %}">Создать</a>
+                    </div>
+                </div>                         
+            </div>
+        </div>
+    </div>
+</div>      
+{% else %}
+    <div class="dont-authenticated">
+        <h2>Вы не зашли в Аккаунт</h2>
+        <a href="{% url 'RegistrationUrl' %}">Регистрация</a>
+        <a href="{% url 'LoginUrl' %}">Вход</a>
+    </div>
+{% endif %}  
+{% endblock %}

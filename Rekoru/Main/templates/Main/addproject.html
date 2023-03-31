@@ -1,0 +1,20 @@
+{% extends './base.html' %}
+
+{% block title %}Rekoru{% endblock %}
+{% block content %}
+<div class="addproject">
+    <div class="container">
+      <div class="addproject_information">
+        <h1>Добавление Проекта</h1>
+        <div class="flex">
+          <div class="addprojectl_greet"></div>
+          <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Отправить" class="addproject_btn">
+          </form>
+        </div>       
+      </div> 
+    </div>
+  </div>
+{% endblock %}

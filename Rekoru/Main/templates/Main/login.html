@@ -1,0 +1,25 @@
+{% extends './base.html' %}
+
+{% block title %}Rekoru - Аккаунты{% endblock %}
+
+{% block content %}
+<div class="login-cl">
+    <div class="container">
+      <div class="login-cl_information">
+        <h1>Log in</h1>
+        <div class="flex">
+          <div class="login-cl_greet">
+            <h2>Добро пожаловать</h2>
+            Безумно Информативный текст про нас:<br>        
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam finibus gravida risus, ut auctor tellus volutpat mattis. Praesent ut lacus sed felis semper tempus a in nisi. Duis auctor quam sit amet imperdiet dictum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris accumsan faucibus erat, nec eleifend dui laoreet a. Nulla luctus blandit sapien, eget laoreet urna commodo ac. Sed mattis enim ut orci volutpat convallis. Suspendisse sollicitudin, tellus nec tempor efficitur, dui nibh facilisis risus, vitae hendrerit mi felis eget lacus. Duis dignissim elit vel ligula posuere lobortis. Ut ac enim eu elit tristique elementum. Aliquam ultricies mollis eros, ac dictum mi malesuada at. Proin auctor, turpis et ultrices eleifend, sapien nisl elementum elit, eu ultrices ligula sem id est.
+          </div>
+          <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Log in" class="login-cl_btn">
+          </form>
+        </div>        
+      </div> 
+    </div>
+  </div>
+{% endblock %}
